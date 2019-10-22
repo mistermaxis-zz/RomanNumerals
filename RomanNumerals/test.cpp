@@ -18,3 +18,7 @@ TEST(RomanNumerals, 1_is_converted_to_I) {
 TEST(RomanNumerals, 2_is_converted_to_II) {
 	ASSERT_EQ("II", arabic_to_roman(2));
 }
+
+TEST(RomanNumerals, 3_is_converted_to_III) {
+	ASSERT_EQ("III", arabic_to_roman(3));
+}
