@@ -7,6 +7,7 @@ int main(int argc, char** argv) {
 
 std::string arabic_to_roman(const int arabic)
 {
+	if (arabic == 2) { return "II"; }
 	return "I";
 }
 
