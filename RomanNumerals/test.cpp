@@ -7,7 +7,7 @@ int main(int argc, char** argv) {
 
 std::string arabic_to_roman(const int arabic)
 {
-	return "I";
+	return "II";
 }
 
 TEST(RomanNumerals, 1_is_converted_to_I) {
