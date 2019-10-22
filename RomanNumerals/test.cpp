@@ -13,3 +13,7 @@ std::string arabic_to_roman(const int arabic)
 TEST(RomanNumerals, 1_is_converted_to_I) {
 	ASSERT_EQ("I", arabic_to_roman(1));
 }
+
+TEST(RomanNumerals, 2_is_converted_to_II) {
+	ASSERT_EQ("II", arabic_to_roman(2));
+}
