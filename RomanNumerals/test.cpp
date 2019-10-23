@@ -55,10 +55,12 @@ TEST(RomanNumerals, conversion_works_on_all_samples) {
 	assertThat(20).isConvertedToRoman("XX");
 	assertThat(30).isConvertedToRoman("XXX");
 	assertThat(33).isConvertedToRoman("XXXIII");
+	assertThat(50).isConvertedToRoman("L");
 	assertThat(100).isConvertedToRoman("C");
 	assertThat(200).isConvertedToRoman("CC");
 	assertThat(300).isConvertedToRoman("CCC");
 	assertThat(333).isConvertedToRoman("CCCXXXIII");
+	assertThat(500).isConvertedToRoman("D");
 	assertThat(1000).isConvertedToRoman("M");
 	assertThat(2000).isConvertedToRoman("MM");
 	assertThat(3000).isConvertedToRoman("MMM");
