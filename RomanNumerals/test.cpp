@@ -2,6 +2,17 @@
 
 std::string arabic_to_roman(int);
 
+struct ArabicRoman {
+	unsigned int Arabic;
+	std::string Roman;
+};
+
+const std::size_t Size = 1;
+
+using ArabicRomanMappings = std::array<ArabicRoman, Size>;
+
+const ArabicRomanMappings arabic_roman_mappings = { {100, "C"} };
+
 class ArabicRomanAssert {
 private:
 	const unsigned int arabicToConvert;
@@ -21,10 +32,10 @@ int main(int argc, char** argv) {
 std::string arabic_to_roman(int arabic)
 {
 	std::string roman;
-	while (arabic >= 100)
+	while (arabic >= arabic_roman_mappings[0].Arabic)
 	{
-		roman += "C";
-		arabic -= 100;
+		roman += arabic_roman_mappings[0].Roman;
+		arabic -= arabic_roman_mappings[0].Arabic;
 	}
 	while (arabic >= 10)
 	{
