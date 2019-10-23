@@ -32,3 +32,7 @@ TEST(RomanNumerals, 3_is_converted_to_III) {
 TEST(RomanNumerals, 10_is_converted_to_X) {
 	ASSERT_EQ("X", arabic_to_roman(10));
 }
+
+TEST(RomanNumerals, 20_is_converted_to_XX) {
+	ASSERT_EQ("XX", arabic_to_roman(20));
+}
