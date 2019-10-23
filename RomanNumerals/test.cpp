@@ -7,14 +7,11 @@ struct ArabicRoman {
 	std::string Roman;
 };
 
-const std::size_t MappingSize = 3;
-const std::size_t C = 0;
-const std::size_t X = 1;
-const std::size_t I = 2;
+const std::size_t MappingSize = 4;
 
 using ArabicRomanMappings = std::array<ArabicRoman, MappingSize>;
 
-const ArabicRomanMappings arabic_roman_mappings = { { {100, "C"}, {10, "X"}, {1, "I"} } };
+const ArabicRomanMappings arabic_roman_mappings = { { {1000, "M"}, {100, "C"}, {10, "X"}, {1, "I"} } };
 
 class ArabicRomanAssert {
 private:
@@ -59,5 +56,9 @@ TEST(RomanNumerals, conversion_works_on_all_samples) {
 	assertThat(100).isConvertedToRoman("C");
 	assertThat(200).isConvertedToRoman("CC");
 	assertThat(300).isConvertedToRoman("CCC");
+	assertThat(333).isConvertedToRoman("CCCXXXIII");
 	assertThat(1000).isConvertedToRoman("M");
+	assertThat(2000).isConvertedToRoman("MM");
+	assertThat(3000).isConvertedToRoman("MMM");
+	assertThat(3333).isConvertedToRoman("MMMCCCXXXIII");
 }
