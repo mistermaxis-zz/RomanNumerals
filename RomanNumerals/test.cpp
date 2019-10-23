@@ -5,11 +5,15 @@ int main(int argc, char** argv) {
 	return RUN_ALL_TESTS();
 }
 
-std::string arabic_to_roman(const int arabic)
+std::string arabic_to_roman(int arabic)
 {
-	if (arabic == 3) { return "III"; }
-	if (arabic == 2) { return "II"; }
-	return "I";
+	std::string roman;
+	while (arabic >= 1)
+	{
+		roman += "I";
+		arabic--;
+	}
+	return roman;
 }
 
 TEST(RomanNumerals, 1_is_converted_to_I) {
