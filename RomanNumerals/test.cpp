@@ -7,11 +7,11 @@ struct ArabicRoman {
 	std::string Roman;
 };
 
-const std::size_t MappingSize = 5;
+const std::size_t MappingSize = 7;
 
 using ArabicRomanMappings = std::array<ArabicRoman, MappingSize>;
 
-const ArabicRomanMappings arabic_roman_mappings = { { {1000, "M"}, {100, "C"}, {10, "X"}, {5, "V"}, {1, "I"} } };
+const ArabicRomanMappings arabic_roman_mappings = { { {1000, "M"}, {500, "D"}, {100, "C"}, {50, "L"}, {10, "X"}, {5, "V"}, {1, "I"} } };
 
 class ArabicRomanAssert {
 private:
