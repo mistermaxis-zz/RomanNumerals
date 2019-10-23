@@ -1,17 +1,20 @@
 #include "pch.h"
 
-std::string arabic_to_roman(int);
+std::string arabic_to_roman(unsigned int);
 
 struct ArabicRoman {
 	unsigned int Arabic;
 	std::string Roman;
 };
 
-const std::size_t Size = 1;
+const std::size_t MappingSize = 3;
+const std::size_t C = 0;
+const std::size_t X = 1;
+const std::size_t I = 2;
 
-using ArabicRomanMappings = std::array<ArabicRoman, Size>;
+using ArabicRomanMappings = std::array<ArabicRoman, MappingSize>;
 
-const ArabicRomanMappings arabic_roman_mappings = { {100, "C"} };
+const ArabicRomanMappings arabic_roman_mappings = { { {100, "C"}, {10, "X"}, {1, "I"} } };
 
 class ArabicRomanAssert {
 private:
@@ -29,23 +32,23 @@ int main(int argc, char** argv) {
 	return RUN_ALL_TESTS();
 }
 
-std::string arabic_to_roman(int arabic)
+std::string arabic_to_roman(unsigned int arabic)
 {
 	std::string roman;
-	while (arabic >= arabic_roman_mappings[0].Arabic)
+	while (arabic >= arabic_roman_mappings[C].Arabic)
 	{
-		roman += arabic_roman_mappings[0].Roman;
-		arabic -= arabic_roman_mappings[0].Arabic;
+		roman += arabic_roman_mappings[C].Roman;
+		arabic -= arabic_roman_mappings[C].Arabic;
 	}
-	while (arabic >= 10)
+	while (arabic >= arabic_roman_mappings[X].Arabic)
 	{
-		roman += "X";
-		arabic -= 10;
+		roman += arabic_roman_mappings[X].Roman;
+		arabic -= arabic_roman_mappings[X].Arabic;
 	}
-	while (arabic >= 1)
+	while (arabic >= arabic_roman_mappings[I].Arabic)
 	{
-		roman += "I";
-		arabic--;
+		roman += arabic_roman_mappings[I].Roman;
+		arabic --;
 	}
 	return roman;
 }
