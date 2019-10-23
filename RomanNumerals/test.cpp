@@ -35,21 +35,16 @@ int main(int argc, char** argv) {
 std::string arabic_to_roman(unsigned int arabic)
 {
 	std::string roman;
-	while (arabic >= arabic_roman_mappings[C].Arabic)
+
+	for (auto& mapping : arabic_roman_mappings)
 	{
-		roman += arabic_roman_mappings[C].Roman;
-		arabic -= arabic_roman_mappings[C].Arabic;
+		while (arabic >= mapping.Arabic)
+		{
+			roman += mapping.Roman;
+			arabic -= mapping.Arabic;
+		}
 	}
-	while (arabic >= arabic_roman_mappings[X].Arabic)
-	{
-		roman += arabic_roman_mappings[X].Roman;
-		arabic -= arabic_roman_mappings[X].Arabic;
-	}
-	while (arabic >= arabic_roman_mappings[I].Arabic)
-	{
-		roman += arabic_roman_mappings[I].Roman;
-		arabic --;
-	}
+
 	return roman;
 }
 
