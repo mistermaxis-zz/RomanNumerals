@@ -22,6 +22,7 @@ std::string arabic_to_roman(int arabic)
 {
 	if (arabic == 100) { return "C"; }
 	if (arabic == 200) { return "CC"; }
+	if (arabic == 300) { return "CCC"; }
 	std::string roman;
 	while (arabic >= 10)
 	{
