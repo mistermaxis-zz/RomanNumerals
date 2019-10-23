@@ -46,4 +46,5 @@ TEST(RomanNumerals, conversion_works_on_all_samples) {
 	assertThat(33).isConvertedToRoman("XXXIII");
 	assertThat(100).isConvertedToRoman("C");
 	assertThat(200).isConvertedToRoman("CC");
+	assertThat(300).isConvertedToRoman("CCC");
 }
