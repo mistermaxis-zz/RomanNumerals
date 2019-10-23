@@ -34,6 +34,12 @@ std::string arabic_to_roman(int arabic)
 	return roman;
 }
 
-TEST(RomanNumerals, 33_is_converted_to_XXXIII) {
-	assertThat(33).isConvertedToRoman("XXXII");
+TEST(RomanNumerals, conversion_works_on_all_samples) {
+	assertThat(1).isConvertedToRoman("I");
+	assertThat(2).isConvertedToRoman("II");
+	assertThat(3).isConvertedToRoman("III");
+	assertThat(10).isConvertedToRoman("X");
+	assertThat(20).isConvertedToRoman("XX");
+	assertThat(30).isConvertedToRoman("XXX");
+	assertThat(33).isConvertedToRoman("XXXIII");
 }
