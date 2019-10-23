@@ -7,11 +7,12 @@ struct ArabicRoman {
 	std::string Roman;
 };
 
-const std::size_t MappingSize = 8;
+const std::size_t MappingSize = 12;
 
 using ArabicRomanMappings = std::array<ArabicRoman, MappingSize>;
 
-const ArabicRomanMappings arabic_roman_mappings = { { {1000, "M"}, {500, "D"}, {100, "C"}, {50, "L"}, {10, "X"}, {5, "V"}, {4, "IV"}, {1, "I"} } };
+const ArabicRomanMappings arabic_roman_mappings =
+{ { {1000, "M"}, {900, "MC"}, {500, "D"}, {400, "CD"}, {100, "C"}, {90, "XC"}, {50, "L"}, {40, "XL"}, {10, "X"}, {5, "V"}, {4, "IV"}, {1, "I"} } };
 
 class ArabicRomanAssert {
 private:
@@ -52,16 +53,21 @@ TEST(RomanNumerals, conversion_works_on_all_samples) {
 	assertThat(4).isConvertedToRoman("IV");
 	assertThat(5).isConvertedToRoman("V");
 	assertThat(6).isConvertedToRoman("VI");
+	assertThat(9).isConvertedToRoman("IX");
 	assertThat(10).isConvertedToRoman("X");
 	assertThat(20).isConvertedToRoman("XX");
 	assertThat(30).isConvertedToRoman("XXX");
 	assertThat(33).isConvertedToRoman("XXXIII");
+	assertThat(40).isConvertedToRoman("XL");
 	assertThat(50).isConvertedToRoman("L");
+	assertThat(90).isConvertedToRoman("XC");
 	assertThat(100).isConvertedToRoman("C");
 	assertThat(200).isConvertedToRoman("CC");
 	assertThat(300).isConvertedToRoman("CCC");
 	assertThat(333).isConvertedToRoman("CCCXXXIII");
+	assertThat(400).isConvertedToRoman("CD");
 	assertThat(500).isConvertedToRoman("D");
+	assertThat(900).isConvertedToRoman("CM");
 	assertThat(1000).isConvertedToRoman("M");
 	assertThat(2000).isConvertedToRoman("MM");
 	assertThat(3000).isConvertedToRoman("MMM");
