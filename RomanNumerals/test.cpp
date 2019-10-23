@@ -7,12 +7,12 @@ struct ArabicRoman {
 	std::string Roman;
 };
 
-const std::size_t MappingSize = 12;
+const std::size_t MappingSize = 13;
 
 using ArabicRomanMappings = std::array<ArabicRoman, MappingSize>;
 
 const ArabicRomanMappings arabic_roman_mappings =
-{ { {1000, "M"}, {900, "MC"}, {500, "D"}, {400, "CD"}, {100, "C"}, {90, "XC"}, {50, "L"}, {40, "XL"}, {10, "X"}, {5, "V"}, {4, "IV"}, {1, "I"} } };
+{ { {1000, "M"}, {900, "CM"}, {500, "D"}, {400, "CD"}, {100, "C"}, {90, "XC"}, {50, "L"}, {40, "XL"}, {10, "X"}, {9, "IX"}, {5, "V"}, {4, "IV"}, {1, "I"} } };
 
 class ArabicRomanAssert {
 private:
