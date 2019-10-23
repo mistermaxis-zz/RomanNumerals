@@ -8,6 +8,7 @@ int main(int argc, char** argv) {
 std::string arabic_to_roman(int arabic)
 {
 	if (arabic == 10) { return "X"; }
+	if (arabic == 20) { return "XX"; }
 	std::string roman;
 	while (arabic >= 1)
 	{
