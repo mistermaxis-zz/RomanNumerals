@@ -72,4 +72,5 @@ TEST(RomanNumerals, conversion_works_on_all_samples) {
 	assertThat(2000).isConvertedToRoman("MM");
 	assertThat(3000).isConvertedToRoman("MMM");
 	assertThat(3333).isConvertedToRoman("MMMCCCXXXIII");
+	assertThat(3999).isConvertedToRoman("MMMCMXCIX");
 }
